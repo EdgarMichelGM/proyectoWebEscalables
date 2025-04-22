@@ -1,0 +1,10 @@
+<div [ngClass]="{'selected' : isSelected}"> 
+    <img [src]="pokemon.imagen">
+    <!-- Mostrar el nombre -->
+    <h2>{{ pokemon.nombre }}</h2>
+    <!-- Mostrar la descripción -->
+    <p>{{ pokemon.descripcion }}</p>
+    <!-- Mostrar los tipos de Pokémon -->
+    <p>Tipo: {{ pokemon.tipo.join(', ') }}</p>
+    <button (click)="selectPokemon()">{{isSelected ? "Deseleccionar" : "Seleccionar"}}</button>
+</div>

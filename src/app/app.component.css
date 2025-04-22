@@ -1,0 +1,99 @@
+.main-container {
+    width: auto;
+    height: 100vh;
+    border: 1px solid #555;
+    background: #eee;
+  }
+
+body {
+    background-color: #f1f1f1;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Estilo para el menú lateral */
+mat-drawer {
+    background-color: #ff4747;  /* Rojo vibrante como la Pokédex original */
+    color: white;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  /* Estilo para mi texto */
+mat-drawer h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive; /* Estilo retro */
+  }
+  
+/* Estilo de las opciones del menú */
+mat-drawer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+mat-drawer ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+mat-drawer ul li:hover {
+    background-color: #ff1e1e;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Estilos de los botones dentro del menú */
+mat-drawer ul li mat-icon {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+
+/* Estilo para el contenido de la Pokédex */
+mat-drawer-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+ 
+app-pokemons-card:hover {
+    transform: scale(1.05);
+  }
+
+app-pokemons-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+/* Estilo para el botón de seleccionar */
+button {
+  background-color: #ff4747;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff1e1e;
+}
+
+/* Para hacer que el menú lateral se vea mejor cuando esté en estado "hover" */
+.selected {
+  background-color: rgba(255, 255, 255, 0.2);
+}
