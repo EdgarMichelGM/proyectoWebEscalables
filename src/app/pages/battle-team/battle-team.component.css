@@ -1,0 +1,125 @@
+.titulo-equipo {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+    color: #3b4cca;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+
+    background: linear-gradient(to right, #a7f42c, #ff6f00); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glow 2.5s ease-in-out infinite alternate;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@keyframes glow { 
+    from {
+        text-shadow: 0 0 4px #ffcb05, 0 0 10px #ffcb05;
+    }
+    to {
+        text-shadow: 0 0 8px #ff6f00, 0 0 20px #ff6f00;
+    }
+}
+
+.subtitulo-batalla {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: #f44336;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.equipo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.slot-carta {
+    width: 20em;
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+:host-context(.mini-card) img {
+    max-height: 120px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Colores estilo bandera de Italia */
+.slot-carta:nth-child(1) {
+    border-left: 10px solid #2ecc71; /* Verde */
+}
+.slot-carta:nth-child(2) {
+    border-left: 10px solid #ffffff; /* Blanco */
+}
+.slot-carta:nth-child(3) {
+    border-left: 10px solid #e74c3c; /* Rojo */
+}
+
+.favoritos-list { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.mini-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: cover;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+}
+
+.mini-img:hover {
+    border: 2px solid #3b4cca;
+}
+
+.mensaje-alerta {
+    color: #ff4747;
+    font-weight: bold;
+    background-color: rgba(255, 71, 71, 0.1);
+    padding: 0.8rem 1rem;
+    margin: 1rem auto;
+    border: 1px solid #ffaaaa;
+    border-radius: 8px;
+    width: fit-content;
+    text-align: center;
+}
+
+.acciones-batalla {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.acciones-batalla button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.acciones-batalla button:hover {
+    background-color: #b71c1c;
+}

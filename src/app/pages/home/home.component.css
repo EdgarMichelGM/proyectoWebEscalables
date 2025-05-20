@@ -1,0 +1,17 @@
+.pokemons-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.logo-container img {
+    width: 200px;
+    height: 100%;
+}

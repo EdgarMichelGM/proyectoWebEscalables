@@ -1,0 +1,22 @@
+<div>
+    <h1 class="titulo-regiones"> 
+        <img src="images/mundo--icon.png" alt="Mundo" class="icono-titulo">
+        Regiones de Pokemex
+    </h1>
+
+    <div class="grid-regiones">
+        <div *ngFor="let region of regiones" 
+        class="region-card"
+        (click)="seleccionarRegion(region)"
+        >
+            {{ region.nombre }}
+        </div>
+    </div>
+
+    <div *ngIf="regionSeleccionada" class="comentario-pokedex">
+        <img src="images/clip-de-papel.png" alt="clip" class="clip">
+        <h1>Pokemon mas representativo</h1>
+        <p>{{ regionSeleccionada.comentario }}</p>
+        <button (click)="regionSeleccionada = null">Cerrar</button>
+    </div>
+</div>

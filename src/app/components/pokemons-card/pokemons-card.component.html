@@ -1,0 +1,16 @@
+<div [ngClass]="{ 'selected': isSelected, 'mini-card': mini }"> 
+    <ng-container *ngIf="mini; else fullView">
+        <img [src]="pokemon.imagen" [alt]="pokemon.nombre" class="mini-img">
+        <h2>{{ pokemon.nombre }}</h2>
+    </ng-container>
+
+    <ng-template #fullView>
+        <img [src]="pokemon.imagen" [alt]="pokemon.nombre">
+        <p><strong>N.°</strong> {{ pokemon.id | number:'3.0' }}</p>
+        <h2>{{ pokemon.nombre }}</h2>
+        <p>{{ pokemon.descripcion }}</p>
+        <p>Tipo: {{ pokemon.tipo.join(', ') }}</p>
+        <p><strong>Región</strong> {{ pokemon.region }}</p>
+        <button (click)="selectPokemon()">{{ isSelected ? "Deseleccionar" : "Seleccionar" }}</button>
+    </ng-template>
+</div>

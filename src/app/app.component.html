@@ -1,15 +1,61 @@
+<!-- 
 <mat-drawer-container class="main-container">
   <mat-drawer mode="side" opened>
     <h3>Menú Lateral</h3>
     <ul>
-      <li>Filtrar por Tipo</li>
-      <li>Filtrar por Región</li>
-      <li>Filtrar por Habilidad</li>
-      <li>Ordenar por Nombre</li>
-      <li>Ordenar por Fuerza</li>
+      <li>Registro</li>
+      <li>Pokedéx</li>
+      <li>Mi pokemón favorito</li>
+      <li>Mi equipo para el combate</li>
+      <li>Registrar pokemón</li>
     </ul>
   </mat-drawer>
   <mat-drawer-content>
     <app-pokemons-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (selectedPokemonEvent)="selectPokemon($event)"></app-pokemons-card>
+  </mat-drawer-content>
+</mat-drawer-container>
+-->
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="side" opened>
+
+      <!-- Imagen/Icono arriba del menú -->
+      <div class="menu-header">
+        <img src="images/menu_icon.png" alt="Icono Menu">
+      </div>
+
+      <mat-list>
+          <mat-list-item routerLinkActive="active">
+              <a routerLink="./home">Pokedex ⚪️🔴</a></mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./favorites">Favoritos ⭐</a>
+          </mat-list-item>
+    
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./types">Tipos de Pokémon 🔥💧🌱</a>
+          </mat-list-item>
+    
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./regions">Regiones 🌎</a>
+          </mat-list-item>
+    
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./battles">Mi equipo para la batalla ⚔️</a>
+          </mat-list-item>
+    
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./about">Modificar Pokedex 📜</a>
+          </mat-list-item>
+    
+          <mat-divider></mat-divider>
+    
+          <mat-list-item routerLinkActive="active">
+            <a routerLink="./settings">Registrarse 📝</a>
+          </mat-list-item>
+      </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="page-container">
+      <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

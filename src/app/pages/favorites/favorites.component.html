@@ -1,0 +1,11 @@
+<div class="favorites-container">
+    <h1 class="titulo-favoritos"> ⭐ Mis Pokémon Favoritos ⭐ </h1>
+
+    <div class="favorites-list">
+        <app-pokemons-card 
+            *ngFor="let pokemon of favoritos" 
+            [pokemon]="pokemon"
+            (selectedPokemonEvent)="removeFromFavorites(pokemon)">
+        </app-pokemons-card>
+    </div>
+</div>

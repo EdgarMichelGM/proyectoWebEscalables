@@ -1,0 +1,40 @@
+<h1 class="titulo-equipo">Mi Equipo para la Batalla ⚔️</h1>
+<div class="acciones-batalla">
+    <button (click)="iniciarBatalla()">⚔️ ¡Pelear!</button>
+</div> 
+<div class="equipo-container">
+    <div *ngFor="let slot of equipo; let i = index" class="slot-carta">
+        <ng-container *ngIf="slot; else vacio">
+            <app-pokemons-card [pokemon]="slot" [mini]="true"></app-pokemons-card>
+            <button (click)="removerPokemon(i)">❌ Remover</button>
+        </ng-container>
+        <ng-template #vacio>
+            <div class="carta-vacia">
+                <p>Selecciona un favorito: </p>
+                <div class="favoritos-list">
+                    <img 
+                        *ngFor="let fav of favoritos" 
+                        [src]="fav.imagen" 
+                        [alt]="fav.nombre"
+                        class="mini-img"
+                        (click)="seleccionarPokemon(i, fav)"
+                    />
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<h2 class="subtitulo-batalla">Equipo enemigo 👾</h2>
+
+<div class="equipo-container">
+    <app-pokemons-card 
+        *ngFor="let enemigo of equipoEnemigo" 
+        [pokemon]="enemigo" 
+        [mini]="true">
+    </app-pokemons-card>
+</div>
+
+
+<div *ngIf="mensaje" class="mensaje-alerta">{{ mensaje }}</div>
+

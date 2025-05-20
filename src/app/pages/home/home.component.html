@@ -1,0 +1,7 @@
+<div class="logo-container">
+    <img src="images/pokemex-logo.png" alt="Pokemex Logo">
+</div>
+
+<div class="pokemons-container">
+    <app-pokemons-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (selectedPokemonEvent)="addToFavorites($event)"></app-pokemons-card>
+</div>

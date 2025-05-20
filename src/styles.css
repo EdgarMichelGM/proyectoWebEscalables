@@ -1,4 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body, mat-drawer-content {
+    margin: 0;
+    padding: 0;
+    background: url('assets/images/background_pokemon.jpg');
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: -1;
+}
+
+/* Fondo del scroll */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Barra del scroll */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ffcb05, #b31217);
+    border-radius: 10px;
+    border: 2px solid #3b4cca;
+}
+
+/* Fondo del área del scroll */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Fondo sutil oscuro */
+}

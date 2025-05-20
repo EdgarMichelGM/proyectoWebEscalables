@@ -1,0 +1,182 @@
+.titulo-tipos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #3b4cca;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    gap: 1rem;
+    background: linear-gradient(to right,  #a7f42c, #ff6f00); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Brillo animado */
+    animation: glow 2.5s ease-in-out infinite alternate;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+@keyframes glow { 
+    from{
+        text-shadow: 0 0 4px #ffcb05, 0 0 10px #ffcb05;
+    }
+    to {
+        text-shadow: 0 0 8px #ff6f00, 0 0 20px #ff6f00;
+    }
+}
+
+.icono-titulo { 
+    width: 1em;
+    height: 1em;
+    animation: spin 4s linear infinite; 
+}
+
+@keyframes spin {
+    from { transform:  rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+.types-container { 
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffcb05, #ff6ff0);
+    min-height: 100vh;
+}
+
+.types-container h1 { 
+    color: #3b4cca;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.grid-tipos{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tipo-card{ 
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; 
+}
+
+.tipo-card:hover { 
+    transform: scale(1.05);
+}
+
+.tipo-info-card { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.15); /* fondo translúcido */
+    backdrop-filter: blur(12px); /* efecto difuminado */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    color: #fff;
+    text-align: left;
+    animation: fadeInCard 0.3s ease-in-out;
+    border: 3px solid rgba(255, 255, 255, 0.25); /* fallback */ 
+}
+
+.tipo-info-card h2 { 
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffcb05;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.tipo-info-card ul {
+    padding-left: 1.2rem;
+    list-style-type: '★ ';
+}
+
+.tipo-info-card button { 
+    margin-top: 1rem;
+    background-color: #ff6f00;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+@keyframes fadeInCard { 
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Colores por tipo */
+.agua       { background: #58abf6; }
+.sabio      { background: #3e4e88; }
+.fuego      { background: #f7786b; }
+.feroz      { background: #9e2929; }
+.normal     { background: #a8a878; }
+.dulce      { background: #f7a8b8; color: #000; }
+.planta     { background: #78c850; }
+.roca       { background: #b8a038; }
+.fantasma   { background: #705898; }
+.luz        { background: #fff176; color: #000; }
+.psíquico   { background: #f85888; }
+.siniestro  { background: #3c3c3c; }
+.eléctrico  { background: #f8d030; color: #000; }
+.hielo      { background: #98d8d8; color: #000; }
+.oscuro     { background: #4e4e4e; }
+.tierra     { background: #e0c068; color: #000; }
+.lucha      { background: #c03028; }
+.veneno     { background: #a040a0; }
+.volador    { background: #a890f0; }
+.acero      { background: #b8b8d0; color: #000; }
+.hada       { background: #ee99ac; color: #000; }
+
+/* Tipos clásicos */
+.tipo-info-card.fuego       { border-color: #f7786b; }
+.tipo-info-card.agua        { border-color: #58abf6; }
+.tipo-info-card.planta      { border-color: #78c850; }
+.tipo-info-card.psíquico    { border-color: #f85888; }
+.tipo-info-card.lucha       { border-color: #c03028; }
+.tipo-info-card.roca        { border-color: #b8a038; }
+.tipo-info-card.veneno      { border-color: #a040a0; }
+.tipo-info-card.volador     { border-color: #a890f0; }
+.tipo-info-card.fantasma    { border-color: #705898; }
+.tipo-info-card.siniestro   { border-color: #3c3c3c; }
+.tipo-info-card.eléctrico   { border-color: #f8d030; }
+.tipo-info-card.hielo       { border-color: #98d8d8; }
+.tipo-info-card.acero       { border-color: #b8b8d0; }
+.tipo-info-card.hada        { border-color: #ee99ac; }
+.tipo-info-card.tierra      { border-color: #e0c068; }
+.tipo-info-card.normal      { border-color: #a8a878; }
+
+/* Tipos personalizados */
+.tipo-info-card.sabio       { border-color: #3e4e88; }
+.tipo-info-card.feroz       { border-color: #9e2929; }
+.tipo-info-card.dulce       { border-color: #f7a8b8; }
+.tipo-info-card.luz         { border-color: #fff176; }
+.tipo-info-card.oscuro      { border-color: #4e4e4e; }

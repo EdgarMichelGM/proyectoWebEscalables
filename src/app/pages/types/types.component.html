@@ -1,0 +1,35 @@
+<div>
+    <h1 class="titulo-tipos">
+        <img src="images/pokebola_icon.png" alt="Icono Pokebola" class="icono-titulo">
+        Tipos de Pokémon Mexicano
+    </h1>
+    <div class="grid-tipos">
+        <div *ngFor="let tipo of tipos" 
+        class="tipo-card {{ tipo.toLowerCase() }}"
+        (click)="seleccionarTipo(tipo)">
+            {{ tipo }}
+        </div>
+    </div>
+    <div *ngIf="tipoSeleccionado" 
+        class="tipo-info-card"
+        [ngClass]="tipoSeleccionado.toLowerCase">
+        <h2>{{ tipoSeleccionado | titlecase }}</h2>
+        <p>{{ typeInfo[tipoSeleccionado].descripcion }}</p>
+
+        <p><strong>Fortalezas:</strong></p>
+        <ul>
+            <li *ngFor="let fortaleza of typeInfo[tipoSeleccionado].fortalezas">
+            {{ fortaleza }}
+            </li>
+        </ul>
+
+        <p><strong>Debilidades:</strong></p>
+        <ul>
+            <li *ngFor="let debilidad of typeInfo[tipoSeleccionado].debilidades">
+            {{ debilidad }}
+            </li>
+        </ul>
+
+        <button (click)="tipoSeleccionado = null">Cerrar</button>
+    </div>
+</div>

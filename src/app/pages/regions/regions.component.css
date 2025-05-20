@@ -1,0 +1,119 @@
+.titulo-regiones { 
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #00c853, #1de9b6);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: region-glow 2.5s ease-in-out infinite alternate;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes region-glow {
+    from {
+        text-shadow: 0 0 4px #00e676;
+    }
+    to { 
+        text-shadow: 0 0 10px #00c853;
+    }
+}
+
+.grid-regiones { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.region-card { 
+    background-color: #3b4cca;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: bold; 
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.region-card:hover { 
+    transform: scale(1.05);
+    background-color: #536dfe;
+}
+
+.icono-titulo {
+    width: 1em;
+    height: 1em;
+    animation: spin 4s linear infinite; 
+}
+
+@keyframes spin {
+    from { transform:  rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+.comentario-pokedex { 
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    max-width: 80%;
+    background: #fffef3;
+    border: 2px dashed #c5b97e;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #3e3e3e;
+
+    animation: notaEntrada 0.4s ease-out;
+}
+
+@keyframes notaEntrada {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.comentario-pokedex button { 
+    margin-top: 1rem;
+    background: #3b4cca;
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.comentario-pokedex h1 { 
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.clip {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 40px;
+    transform: rotate(-15deg);
+    z-index: 25;
+    pointer-events: none;
+}
+
+.comentario-pokedex button:hover{ 
+    background: #2a3399;
+}
