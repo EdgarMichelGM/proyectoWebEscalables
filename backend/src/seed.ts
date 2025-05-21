@@ -228,9 +228,48 @@ const pokemons = [
         descripcion: "Se desliza entre las nubes frías de las montañas del Ajusco. Deja una estela de copos brillantes donde pasa.",
         region: "CDMX",
         imagen: "images/nevatl.jpg"
+    },
+    {
+        id: 29,
+        nombre: "Sombravelo",
+        tipo: ["volador", "fantasma"],
+        descripcion: "Un sombrero encantado que flota solitario por pueblos antiguos. Gira rápidamente para desaparecer en el viento.",
+        region: "Zacatecas",
+        imagen: "images/sombravelo.jpg"
+    },
+    {
+        id: 30,
+        nombre: "Tenextli",
+        tipo: ["roca", "fuego"],
+        descripcion: "Criatura forjada en piedra volcánica. Su cuerpo arde desde dentro y camina entre cráteres antiguos.",
+        region: "Colima",
+        imagen: "images/tenextli.jpg"
+    },
+    {
+        id: 31,
+        nombre: "Tlayoleón",
+        tipo: ["fuego", "sabio"],
+        descripcion: "Espíritu ancestral de los braseros indígenas. Su sabiduría arde con pasión.",
+        region: "Puebla",
+        imagen: "images/tlayoleon.jpg"
+    },
+    {
+        id: 32,
+        nombre: "Tzompavox",
+        tipo: ["fantasma", "psíquico"],
+        descripcion: "Habita en los antiguos altares de sacrificio. Puede comunicar pensamientos del más allá.",
+        region: "Estado de México",
+        imagen: "images/tzompavox.jpg"
+    },
+    {
+        id: 33,
+        nombre: "Xochisweet",
+        tipo: ["hada", "dulce"],
+        descripcion: "Pequeña y encantadora criatura que se esconde entre flores de cempasúchil. Su aroma adormece a sus enemigos.",
+        region: "Morelos",
+        imagen: "images/xochisweet.jpg"
     }
 ];
-
 mongoose.connect(process.env.MONGO_URI || '').then(async () => {
     await Pokemon.deleteMany({});
     await Pokemon.insertMany(pokemons);

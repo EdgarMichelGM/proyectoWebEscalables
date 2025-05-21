@@ -1,0 +1,52 @@
+<h2>Admin Pokédex</h2>
+
+<!-- Botón flotante o fijo para crear -->
+<button (click)="abrirFormulario()">➕ Añadir Pokémon</button>
+
+<!-- Modal con fondo oscurecido -->
+<div class="modal-backdrop" *ngIf="mostrarFormulario" (click)="cerrarFormulario()"></div>
+
+<div class="modal-form" *ngIf="mostrarFormulario">
+    <form [formGroup]="form" (ngSubmit)="guardar()" (click)="$event.stopPropagation()">
+        <h2>{{ editando ? 'Editar Pokémon' : 'Nuevo Pokémon' }}</h2>
+
+        <input formControlName="id" placeholder="ID (opcional)">
+        <input formControlName="nombre" placeholder="Nombre" required>
+        <input formControlName="descripcion" placeholder="Descripción">
+        <input formControlName="region" placeholder="Región">
+        <input formControlName="imagen" placeholder="URL de imagen">
+
+        <div>
+        <label>Tipos:</label>
+        <input #nuevoTipo placeholder="Nuevo tipo">
+        <button type="button" (click)="agregarTipo(nuevoTipo.value); nuevoTipo.value=''">Añadir tipo</button>
+        <ul>
+            <li *ngFor="let t of tipo.controls; let i = index">
+            {{ t.value }} <button type="button" (click)="eliminarTipo(i)">x</button>
+            </li>
+        </ul>
+        </div>
+
+        <div class="acciones">
+        <button type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+        <button type="button" (click)="cerrarFormulario()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+
+<hr>
+
+<h3>Pokémon Registrados</h3>
+<ul>
+    <li *ngFor="let p of pokemons">
+        <strong>{{ p.nombre }}</strong> ({{ p.region }}) - {{ p.tipo.join(', ') }}
+        <br>
+        <img [src]="p.imagen" alt="{{ p.nombre }}" width="100">
+        <br>
+        <button (click)="editar(p)">Editar</button>
+        <button (click)="eliminar(p._id!)">Eliminar</button>
+        <hr>
+    </li>
+</ul>
+

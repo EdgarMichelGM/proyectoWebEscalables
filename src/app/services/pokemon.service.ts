@@ -14,4 +14,24 @@ export class PokemonService {
     getPokemons(): Observable<Pokemon[]> {
         return this.http.get<Pokemon[]>(this.apiUrl); 
     }
+
+    // GET - Leer uno por ID
+    getPokemon(id: string): Observable<Pokemon> {
+        return this.http.get<Pokemon>(`${this.apiUrl}/${id}`);
+    }
+
+    // POST - Crear nuevo
+    createPokemon(pokemon: Pokemon): Observable<Pokemon> {
+        return this.http.post<Pokemon>(this.apiUrl, pokemon);
+    }
+
+    // PUT - Actualizar existente
+    updatePokemon(id: string, pokemon: Pokemon): Observable<Pokemon> {
+        return this.http.put<Pokemon>(`${this.apiUrl}/${id}`, pokemon);
+    }
+
+    // DELETE - Eliminar
+    deletePokemon(id: string): Observable<any> {
+        return this.http.delete(`${this.apiUrl}/${id}`);
+    }
 }
