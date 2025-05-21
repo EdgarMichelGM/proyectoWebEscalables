@@ -44,15 +44,21 @@ export class BattleTeamComponent implements OnInit {
   constructor(private pokemonService: PokemonService) {}
 
   generarEquipoRival(): void {
-    const todos = this.pokemonService.pokemons; 
-    this.equipoEnemigo = [];
-  
-    while (this.equipoEnemigo.length < 3) {
-      const aleatorio = todos[Math.floor(Math.random() * todos.length)];
-      if (!this.equipoEnemigo.find(p => p.id === aleatorio.id)) {
-        this.equipoEnemigo.push(aleatorio);
+    this.pokemonService.getPokemons().subscribe({
+      next: (todos) => {
+        this.equipoEnemigo = [];
+
+        while (this.equipoEnemigo.length < 3) {
+          const aleatorio = todos[Math.floor(Math.random() * todos.length)];
+          if (!this.equipoEnemigo.find(p => p.id === aleatorio.id)) {
+            this.equipoEnemigo.push(aleatorio);
+          }
+        }
+      },
+      error: (err) => {
+        console.error('Error al obtener pokemones:', err);
       }
-    }
+    });
   }
 
   iniciarBatalla(): void {
