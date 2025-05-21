@@ -72,7 +72,15 @@ export class PokedexCrudComponent implements OnInit{
   editar(pokemon: Pokemon) {
     this.editando = true; 
     this.idActual = pokemon._id!;
-    this.form.patchValue(pokemon); 
+    this.mostrarFormulario = true; 
+
+    this.form.patchValue({
+      nombre: pokemon.nombre, 
+      descripcion: pokemon.descripcion, 
+      region: pokemon.region, 
+      imagen: pokemon.imagen
+    });
+    
     this.tipo.clear(); 
     pokemon.tipo.forEach(t => this.tipo.push(this.fb.control(t))); 
   }
