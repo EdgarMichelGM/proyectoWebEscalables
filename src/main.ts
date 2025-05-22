@@ -1,13 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
-
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
+import { appProviders } from './app/app.providers'
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient(),     
+    ...appProviders,
+    provideHttpClient(withInterceptorsFromDi()),  
     provideRouter(routes)    
   ]
 });

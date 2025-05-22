@@ -1,13 +1,14 @@
 import { Router } from 'express';
 import * as PokemonController from '../controllers/pokemon.controller';
+import { verifyToken } from '../middleware/auth.middleware';
 
 const router = Router();
 
-router.get('/', PokemonController.getAllPokemons);
-router.get('/:id', PokemonController.getPokemonById);
-router.post('/', PokemonController.createPokemon);
-router.put('/:id', PokemonController.updatePokemon);
-router.delete('/:id', PokemonController.deletePokemon);
+router.get('/', verifyToken, PokemonController.getAllPokemons);
+router.get('/:id', verifyToken, PokemonController.getPokemonById);
+router.post('/', verifyToken, PokemonController.createPokemon);
+router.put('/:id', verifyToken, PokemonController.updatePokemon);
+router.delete('/:id', verifyToken, PokemonController.deletePokemon);
 
 
 export default router;

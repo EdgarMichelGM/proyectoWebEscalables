@@ -1,0 +1,15 @@
+<h2>Registro</h2>
+
+<form [formGroup]="form" (ngSubmit)="register()">
+    <label>Usuario</label>
+    <input type="text" formControlName="username" required>
+
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" required>
+
+    <button type="submit">Registrarse</button>
+</form>
+
+<p *ngIf="successMsg" style="color: green">{{ successMsg }}</p>
+<p *ngIf="errorMsg" style="color: red">{{ errorMsg }}</p>
+

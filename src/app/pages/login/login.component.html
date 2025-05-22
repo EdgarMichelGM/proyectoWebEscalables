@@ -1,0 +1,17 @@
+<h2>Iniciar Sesión</h2>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+    <label>Usuario</label>
+    <input type="text" formControlName="username" required>
+
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" required>
+
+    <button type="submit">Ingresar</button>
+</form>
+
+<p *ngIf="errorMsg" style="color: red">{{ errorMsg }}</p>
+
+<p style="margin-top: 1rem">
+    ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>
+</p>

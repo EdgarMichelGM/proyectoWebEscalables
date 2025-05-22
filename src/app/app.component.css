@@ -61,3 +61,14 @@ a {
   border-radius: 50%;
   border: 2px solid #ffcb05; 
 }
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.logout-container button {
+  width: 100%;
+}

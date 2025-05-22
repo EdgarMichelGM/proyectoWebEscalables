@@ -51,9 +51,13 @@
           <mat-divider></mat-divider>
     
           <mat-list-item routerLinkActive="active">
-            <a routerLink="./settings">Registrarse 📝</a>
+            <a routerLink="./register">Registrarse 📝</a>
           </mat-list-item>
       </mat-list>
+      <div class="logout-container" *ngIf="auth.isLoggedIn()">
+        <button mat-raised-button color="warn" (click)="logout()">Cerrar sesión</button>
+      </div>
+
   </mat-drawer>
   <mat-drawer-content class="page-container">
       <router-outlet></router-outlet>
