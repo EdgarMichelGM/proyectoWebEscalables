@@ -1,20 +1,3 @@
-<!-- 
-<mat-drawer-container class="main-container">
-  <mat-drawer mode="side" opened>
-    <h3>Menú Lateral</h3>
-    <ul>
-      <li>Registro</li>
-      <li>Pokedéx</li>
-      <li>Mi pokemón favorito</li>
-      <li>Mi equipo para el combate</li>
-      <li>Registrar pokemón</li>
-    </ul>
-  </mat-drawer>
-  <mat-drawer-content>
-    <app-pokemons-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (selectedPokemonEvent)="selectPokemon($event)"></app-pokemons-card>
-  </mat-drawer-content>
-</mat-drawer-container>
--->
 <mat-drawer-container class="main-container">
   <mat-drawer mode="side" opened>
 
@@ -55,7 +38,7 @@
           </mat-list-item>
       </mat-list>
       <div class="logout-container" *ngIf="auth.isLoggedIn()">
-        <button mat-raised-button color="warn" (click)="logout()">Cerrar sesión</button>
+        <button class="btn-logout-épico" color="warn" (click)="logout()">Cerrar sesión</button>
       </div>
 
   </mat-drawer>

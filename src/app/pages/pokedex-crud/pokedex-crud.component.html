@@ -1,13 +1,13 @@
 <h1 class="titulo-admin">Admin Pokédex</h1>
 
 <!-- Botón flotante o fijo para crear -->
-<button (click)="abrirFormulario()">➕ Añadir Pokémon</button>
+<button class="btn-add-pokemon" (click)="abrirFormulario()">➕ Añadir Pokémon</button>
 
 <!-- Modal con fondo oscurecido -->
 <div class="modal-backdrop" *ngIf="mostrarFormulario" (click)="cerrarFormulario()"></div>
 
-<div class="modal-form" *ngIf="mostrarFormulario">
-    <form [formGroup]="form" (ngSubmit)="guardar()" (click)="$event.stopPropagation()">
+<div class="modal-form fondo-pokedex" *ngIf="mostrarFormulario">
+    <form [formGroup]="form" (ngSubmit)="guardar()" (click)="$event.stopPropagation()" class="formulario-retro">
         <h2>{{ editando ? 'Editar Pokémon' : 'Nuevo Pokémon' }}</h2>
 
         <input formControlName="id" placeholder="ID (opcional)">
@@ -44,8 +44,8 @@
         <br>
         <img [src]="p.imagen" alt="{{ p.nombre }}" width="100">
         <br>
-        <button (click)="editar(p)">Editar</button>
-        <button (click)="eliminar(p._id!)">Eliminar</button>
+        <button class="btn-editar" (click)="editar(p)">Editar</button>
+        <button class="btn-eliminar" (click)="eliminar(p._id!)">Eliminar</button>
         <hr>
     </li>
 </ul>

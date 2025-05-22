@@ -72,3 +72,31 @@ a {
 .logout-container button {
   width: 100%;
 }
+
+.btn-logout-épico {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 0.2px;
+}
+
+.btn-logout-épico:hover {
+  background: linear-gradient(135deg, #ff5252, #c51162);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 23, 68, 0.6);
+}
+
+.btn-logout-épico:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(255, 23, 68, 0.3);
+}

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -27,7 +28,7 @@ export class LoginComponent {
 
     this.auth.login(this.form.value).subscribe({
       next: () => {
-        this.router.navigate(['/admin-pokedex']); // Cambia por la ruta protegida que quieras
+        this.router.navigate(['/home']); // Cambia por la ruta protegida que quieras
       },
       error: () => {
         this.errorMsg = 'Credenciales incorrectas';

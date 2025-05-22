@@ -1,15 +1,15 @@
-<h2>Registro</h2>
-
-<form [formGroup]="form" (ngSubmit)="register()">
+<h2 class="titulo-tron">Registro</h2>
+<img src="images/Voltorb-Pokemon.png" alt="Voltorb" class="voltorb-side">
+<form [formGroup]="form" (ngSubmit)="register()" class="form-tron">
     <label>Usuario</label>
     <input type="text" formControlName="username" required>
 
     <label>Contraseña</label>
     <input type="password" formControlName="password" required>
 
-    <button type="submit">Registrarse</button>
+    <button type="submit" class="btn-tron">Registrarse</button>
 </form>
-
-<p *ngIf="successMsg" style="color: green">{{ successMsg }}</p>
-<p *ngIf="errorMsg" style="color: red">{{ errorMsg }}</p>
+<img src="images/img_register.png" alt="Gengar" class="gengar-side">
+<p *ngIf="successMsg" class="msg-tron success">{{ successMsg }}</p>
+<p *ngIf="errorMsg"  class="msg-tron error">{{ errorMsg }}</p>
 
