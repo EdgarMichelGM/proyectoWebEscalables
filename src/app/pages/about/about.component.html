@@ -1,0 +1,23 @@
+<div class="about-container">
+    <h1 class="about-title">🌟 Bienvenido a Pokédex Mexicana</h1>
+    <p class="about-description">
+        Esta app está inspirada en la cultura mexicana y el mundo de Pokémon. Aquí puedes descubrir criaturas únicas creadas con amor, historia y sabor local.
+    </p>
+
+    <h2 class="carrusel-title">🎠 Descubre nuestras criaturas</h2>
+
+    <div class="carrusel">
+        <div class="carrusel-track">
+        <img *ngFor="let img of imagenes" [src]="img" alt="pokemon" class="poke-img" />
+        </div>
+    </div>
+
+    <footer class="footer-about">
+        <p>Creado por Michel estudiante de la UASLP en la carrera de Ing en Computación</p>
+        <p>con inspiración en la cultura mexicana 🇲🇽</p>
+        <p>Proyecto educativo sin fines de lucro (oiste Nintendo?)</p>
+    </footer>
+
+</div>
+
+

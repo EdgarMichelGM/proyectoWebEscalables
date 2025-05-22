@@ -5,10 +5,16 @@ import { RegionsComponent } from './pages/regions/regions.component';
 import { BattleTeamComponent } from './pages/battle-team/battle-team.component';
 import { PokedexCrudComponent } from './pages/pokedex-crud/pokedex-crud.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { AboutComponent } from './pages/about/about.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
+    {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
+        title: 'Acerca de la App'
+    },
     {
         path: 'home',
         loadComponent: () =>
@@ -65,7 +71,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'about',
         pathMatch: 'full'
     },
     {
