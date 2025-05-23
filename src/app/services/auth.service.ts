@@ -20,9 +20,14 @@ export class AuthService {
     }
 
     login(creds: Credentials): Observable<AuthResponse> {
-        return this.http.post<AuthResponse>(`${this.api}/login`, creds)
-        .pipe(
-            tap(res => localStorage.setItem('token', res.token))
+        return this.http.post<AuthResponse>(`${this.api}/login`, creds).pipe(
+            tap(res => {
+                localStorage.setItem('token', res.token);
+
+                // Extraer el ID del token (el username o _id)
+                const payload = JSON.parse(atob(res.token.split('.')[1]));
+                localStorage.setItem('userId', payload.id); 
+            })
         );
     }
 
@@ -36,6 +41,10 @@ export class AuthService {
 
     isLoggedIn(): boolean {
         return !!this.getToken();
+    }
+
+    isAdmin(): boolean {
+        return localStorage.getItem('userId') === 'admin';
     }
 
 }

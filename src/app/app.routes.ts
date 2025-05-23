@@ -7,6 +7,7 @@ import { PokedexCrudComponent } from './pages/pokedex-crud/pokedex-crud.componen
 import { RegisterComponent } from './pages/register/register.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 
 export const routes: Routes = [
@@ -55,7 +56,7 @@ export const routes: Routes = [
         loadComponent: () =>
         import('./pages/pokedex-crud/pokedex-crud.component').then(m => m.PokedexCrudComponent),
         title: 'Admin Pokedex',
-        canActivate: [AuthGuard]
+        canActivate: [AdminGuard]
     },
     {
         path: 'register',
